@@ -6,8 +6,6 @@ This is a simple React project demonstrating the creation of DOM elements using 
 
 The project has the following basic folder structure:
 
-Use code with caution.
-.
 ├── app.js
 ├── index.html
 
