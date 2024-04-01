@@ -7,6 +7,7 @@ This is a simple React project demonstrating the creation of DOM elements using 
 The project has the following basic folder structure:
 
 ├── app.js
+
 ├── index.html
 
 
@@ -39,4 +40,3 @@ The `app.js` file demonstrates three approaches for creating and manipulating DO
 - This is a basic example to showcase the fundamentals of DOM manipulation with React.
 - Consider using `textContent` instead of `innerHTML` for security reasons in React development to prevent potential XSS vulnerabilities.
 
-I hope this README.md provides a clear explanation of your project!
