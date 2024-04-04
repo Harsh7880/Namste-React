@@ -1,7 +1,7 @@
 {
-  "name": "talk-is-cheap-show-me-the-code",
+  "name": "lets-get-hoked",
   "version": "1.0.0",
-  "description": "This is 4th episode of Namaste React series ",
+  "description": "This is 5th episode of Namaste React series ",
   "main": "app.js",
   "scripts": {
     "test": "jest",
