@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { API_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 const Body = () => {
+
   const [listOfRestorants, setListOfRestorants] = useState([]);
+  
   useEffect(() => {
     fetchData();
   }, []);
