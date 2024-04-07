@@ -1,7 +1,7 @@
 {
-  "name": "exploring-the-world",
+  "name": "finding-the-path",
   "version": "1.0.0",
-  "description": "This is 6th episode of Namaste React series ",
+  "description": "This is 7th episode of Namaste React series ",
   "main": "app.js",
   "scripts": {
     "test": "jest",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
   }
 }
