@@ -1,7 +1,7 @@
 {
   "name": "lets-get-classy",
   "version": "1.0.0",
-  "description": "This is 8th episode of Namaste React series ",
+  "description": "This is 8th episode of Namaste React series, we will know about class based components ",
   "main": "app.js",
   "scripts": {
     "test": "jest",
