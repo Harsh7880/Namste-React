@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const Body = () => {
   const [listOfRestorants, setListOfRestorants] = useState([]);
   const [filteredRestorants, setFilteredRestorants] = useState([]);
-
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
