@@ -1,0 +1,77 @@
+Question: When and why do we need lazy()?
+
+Ans: Code Splitting: Large React applications can have many components, resulting in a significant initial bundle 
+size. By using React.lazy(), you can split your application into smaller chunks, loading only the necessary 
+components when they are required. This can lead to faster initial load times and better overall performance, 
+particularly on slower network connections.
+
+Question: What is suspense?
+Ans: 
+
+Handling Asynchronous Operations: Suspense is primarily used to manage the loading states of components 
+that are asynchronously fetching data, such as data from an API or dynamic imports.
+
+Declarative Loading States: With Suspense, you can specify a fallback UI to render while the asynchronous 
+operation is in progress. This fallback UI could be a loading spinner, a placeholder, or any other component 
+that indicates to the user that content is being loaded.
+
+Question: Why we got this error : A component suspended while responding to
+synchronous input. This will cause the UI to be replaced with a loading indicator.
+To fix, updates that suspend should be wrapped with startTransition? How does
+suspense fix this error?
+Ans: 
+Synchronous Input and Suspense: When a component receives synchronous input (such as user interactions or 
+updates triggered by other components), React expects the component to respond immediately without causing 
+the UI to freeze or display loading indicators.
+
+Suspended Updates: If a component triggers an asynchronous operation or renders a lazy-loaded component in 
+response to synchronous input, it may suspend rendering until the asynchronous operation completes. 
+This can cause the UI to momentarily freeze or display loading indicators unexpectedly, disrupting the user experience.
+
+startTransition: startTransition is a React API that allows you to mark updates as "transitions" or 
+"low priority," indicating to React that these updates are not critical for immediate rendering. Components 
+wrapped with startTransition will not block synchronous input or trigger Suspense fallbacks immediately, 
+allowing the UI to remain responsive.
+
+Question: Advantages and disadvantages of using this code splitting pattern?
+Ans: Code splitting is a technique used to improve the performance of web applications by splitting the application 
+bundle into smaller chunks that are loaded on-demand. Here are some advantages and disadvantages of using this code
+splitting pattern:
+
+Advantages:
+
+Faster Initial Load Times: By splitting the application bundle into smaller chunks, the initial load time of the 
+application can be significantly reduced. Only the necessary code for the initial view is loaded, while additional 
+code is loaded as needed.
+
+Improved Performance: Smaller bundle sizes lead to faster parsing, compilation, and execution of JavaScript code, 
+resulting in better overall performance of the application. This can lead to faster page rendering and improved 
+user experience.
+
+Disadvantages:
+
+Complexity: Implementing code splitting can introduce additional complexity to the development process, especially
+when dealing with larger applications with complex module dependencies. Managing code splitting configurations and 
+ensuring proper chunking can be challenging.
+
+Potential for Bugs: Improper implementation of code splitting can lead to bugs and unexpected behavior, such as 
+missing dependencies or broken routes. Careful planning and testing are required to ensure that code splitting 
+does not introduce regressions or compatibility issues.
+
+Increased Build Time: Code splitting can increase build times, especially for applications with numerous split 
+points or complex dependency graphs. This can impact developer productivity and slow down the development process, 
+particularly for large applications.
+
+Question: When do we and why do we need suspense?
+Ans: Suspense is a feature in React that allows you to handle asynchronous operations, such as data fetching or lazy 
+loading, in a more declarative and intuitive way. Here's when and why you might need to use Suspense in your React 
+applications:
+
+Asynchronous Data Fetching: When your components need to fetch data asynchronously, Suspense can help manage the
+loading state and error handling for these operations. Instead of manually managing loading states with boolean 
+flags or loading spinners, Suspense allows you to declaratively specify loading indicators and error boundaries.
+
+Lazy Loading: When you want to lazily load components, such as route-based code splitting or conditionally rendered 
+components, Suspense can be used to handle the loading state while the component is being fetched. This can help 
+improve the initial load time of your application by deferring the loading of non-essential components until they 
+are actually needed.
