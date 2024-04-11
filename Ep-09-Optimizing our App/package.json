@@ -1,0 +1,22 @@
+{
+  "name": "optimizing-our-app",
+  "version": "1.0.0",
+  "description": "This is 9th episode of Namaste React series, we will Optimize out App",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Harsh Kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  }
+}
