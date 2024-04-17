@@ -1,5 +1,4 @@
 import Shimmer from "./Shimmer";
-import Shimmer from "./Shimmer";
 import MenuItem from "./MenuItem";
 import { useParams } from "react-router-dom";
 import useRestorauntMenu from "../utils/useRestorauntMenu";
@@ -13,10 +12,10 @@ const RestorantMenu = () => {
     resInfo?.cards[2]?.card?.card?.info;
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card.card;
-
+console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card.card);
   return (
-    <>
-      <div className="restorant-page  m-4 p-8">
+  
+      <div className="w-7/12 m-auto p-8">
         <p className="text-xs text-gray-500">
           Home / Vijayawada / UBQ by Barbeque Nation
         </p>
@@ -55,7 +54,6 @@ const RestorantMenu = () => {
           </div>
         ))}
       </div>
-    </>
   );
 };
 

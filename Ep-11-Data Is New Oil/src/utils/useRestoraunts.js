@@ -1,9 +1,8 @@
 import { API_URL } from "./constants";
-import { useState, useEffect, Component } from "react";
+import { useState, useEffect } from "react";
 
 const useRestoraunts = () => {
   const [listOfRestorants, setListOfRestorants] = useState([]);
-  // const [filteredRestorants, setFilteredRestorants] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -16,8 +15,6 @@ const useRestoraunts = () => {
       JsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
-    // setFilteredRestorants(JsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-    // ?.restaurants);
 
   };
 

@@ -1,9 +1,8 @@
-import RestorantCard, {withPromotedLabel} from "./RestorantCard";
 import Shimmer from "./Shimmer";
+import RestorantCard from "./RestorantCard";
 import { Link } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
-import useRestoraunts from "../utils/useRestoraunts";
 import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   
@@ -25,8 +24,6 @@ const Body = () => {
           ?.restaurants);
         
     };
-  
-  const RestorantWithPromotedLable = withPromotedLabel(RestorantCard); 
 
   // Conditional Rendering
   const onlineStatus = useOnlineStatus();
@@ -74,12 +71,11 @@ const Body = () => {
       <div className="flex flex-wrap">
         {
         filteredRestorants.map((restaurant) => (
-          
         <Link to={"restaurant/"+restaurant.info.id} key={restaurant.info.id}>
-
           <RestorantCard  resData={restaurant} />
         </Link>  
-        ))
+        )
+      )
         }
       </div>
     </div>

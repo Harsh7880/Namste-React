@@ -1,4 +1,3 @@
-import UserClass from "./UserClass";
 import {Component} from 'react';
 class About extends Component {
 
@@ -18,7 +17,6 @@ class About extends Component {
     return (
       <div>
         <h1>this is About Us Page</h1>
-        <UserClass/>
       </div>
     );
    }

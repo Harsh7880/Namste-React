@@ -6,7 +6,7 @@ const RestorantCard = ({ resData }) => {
   return (
     <div className=" bg-gray-200 m-4 p-4 w-52 rounded-lg items-center hover:bg-slate-400">
       <div className="align-middle rounded-lg">
-        <img className="rounded-lg" src={CDN_URL + cloudinaryImageId} />
+        <img alt="Restorant-logo" className="rounded-lg" src={CDN_URL + cloudinaryImageId} />
       </div>
       <div className="py-2">
         <h2 className="font-bold my-2">{name}</h2>
@@ -16,16 +16,5 @@ const RestorantCard = ({ resData }) => {
       </div>
     </div>
   );
-};
-
-export const withPromotedLabel = (RestorantCard) => {
-  return () => {
-    return (
-      <>
-        <label>Promoted</label>
-        <RestorantCard />
-      </>
-    );
-  };
 };
 export default RestorantCard;
