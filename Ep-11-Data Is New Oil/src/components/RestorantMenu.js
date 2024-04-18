@@ -1,7 +1,7 @@
 import Shimmer from "./Shimmer";
-import MenuItem from "./MenuItem";
 import { useParams } from "react-router-dom";
 import useRestorauntMenu from "../utils/useRestorauntMenu";
+import ResCatgory from "./ResCatgory";
 const RestorantMenu = () => {
   const { resID } = useParams();
   const resInfo = useRestorauntMenu(resID);
@@ -12,7 +12,7 @@ const RestorantMenu = () => {
     resInfo?.cards[2]?.card?.card?.info;
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card.card;
-console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card.card);
+    const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" || c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory");
   return (
   
       <div className="w-7/12 m-auto p-8">
@@ -46,13 +46,11 @@ console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.car
         <div className="menuTitle">
           <h6 className="text-center my-5">Menu</h6>
         </div>
-        <h2 className="font-bold">Recommended(16)</h2>
-
-        {itemCards.map((itemCard) => (
-          <div key={itemCard.card.info.id} className="bg-gray-200 p-4 m-4 flex items-center">
-            <MenuItem menuItem={itemCard} />
-          </div>
-        ))}
+      {
+        categories.map((category)=> (
+           <ResCatgory key={category.card.card.title} category = {category.card.card} />
+        ))
+      }
       </div>
   );
 };
