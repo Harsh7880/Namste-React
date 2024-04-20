@@ -2,13 +2,16 @@ import Shimmer from "./Shimmer";
 import RestorantCard from "./RestorantCard";
 import { Link } from "react-router-dom";
 import { API_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 const Body = () => {
   
   const [searchValue, setSearchValue] = useState("");
   const [listOfRestorants, setListOfRestorants] = useState([]);
   const [filteredRestorants, setFilteredRestorants] = useState([]);
+  const {loggedInUser,setUserName} = useContext(UserContext);
+
   useEffect(() => {
       fetchData();
     }, []);
@@ -52,7 +55,6 @@ const Body = () => {
               setFilteredRestorants(filteredRestorants);
             }}
           >
-            {" "}
             Search
           </button>
         </div>
@@ -67,6 +69,15 @@ const Body = () => {
         >
           Top Rated Restorant's
         </button>
+        <input
+            className="border border-sky-500 px-3 mx-4 py-1 rounded-md w-1000"
+            type="text"
+            placeholder="User Name"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
       </div>
       <div className="flex flex-wrap">
         {

@@ -6,19 +6,39 @@ import About from './components/About';
 import Contact from './components/Contact'
 import Error from './components/Error'
 import RestorantMenu from './components/RestorantMenu';
+import UserContext from './utils/UserContext';
+import { useEffect,useState } from 'react';
+
 import {
     createBrowserRouter,
     RouterProvider,
     Outlet
   } from "react-router-dom";
 
+
+
 const AppLayout = () => {
+
+    const [userName,setUserName] = useState();
+    useEffect(()=>{
+       // make an API cal to get the data of user 
+       const data = {
+        name: "Harsh Kumar"
+       }
+       setUserName(data.name);
+    },[])
+
     return (
+
+        <UserContext.Provider value={{loggedInUser : userName, setUserName}}>
         <div className='app'>
+        <UserContext.Provider value={{loggedInUser : "Vashu"}}>
             <Header/>
+        </UserContext.Provider>
             <Outlet/>
             {/* <Footer/> */}
         </div>
+        </UserContext.Provider>
     )
 }
 
