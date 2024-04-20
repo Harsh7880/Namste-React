@@ -1,10 +1,11 @@
 import ItemList from "./ItemList";
 import { useState } from "react";
-const ResCatgory = ({ category }) => {
-  const { itemCards } = category;
-  const [show, setShow] = useState(false);
+const ResCatgory = ({ category, showItems,setShowIndex }) => {
+  const { itemCards,categories } = category;
+  // const [showItems, setShowItems] = useState(false);
   const handleShow = () => {
-    setShow(!show);
+    setShowIndex();
+    showItems = !showItems
   };
 
   return (
@@ -15,14 +16,14 @@ const ResCatgory = ({ category }) => {
           className=" p-4 m-4 flex justify-between cursor-pointer"
         >
           <span className="text-lg font-bold my-2">
-            {category.title} ({category.itemCards.length})
+            {category.title} ({category?.itemCards?.length})
           </span>
           <span> ⬇️ </span>
         </div>
         <div>
-          {itemCards.map(
+          { itemCards ?.map(
             (itemCard) =>
-              show && <ItemList key={itemCard.card.info.name} data={itemCard} />
+            showItems && <ItemList key={itemCard.card.info.name} data={itemCard} />
           )}
         </div>
       </div>

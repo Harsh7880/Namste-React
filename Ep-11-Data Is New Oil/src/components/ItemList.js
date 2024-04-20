@@ -1,5 +1,6 @@
 import { CDN_URL } from "../utils/constants";
 export default ItemList = ({ data }) => {
+  console.log(data);
   return (
     <div>
       <div className="flex p-4">
@@ -19,8 +20,9 @@ export default ItemList = ({ data }) => {
         </div>
         <div className="w-3/12 flex items-center justify-center">
           <img
+            
             className="w-3/4"
-            src={data.card.info.imageId ? CDN_URL + data.card.info.imageId : ""}
+            src={data.card?.info?.imageId ? CDN_URL + data?.card?.info?.imageId : ""}
           />
         </div>
       </div>
