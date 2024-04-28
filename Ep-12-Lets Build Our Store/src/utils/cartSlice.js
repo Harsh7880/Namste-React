@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { redirect } from 'react-router-dom';
+
 
 
 const cartSlice = createSlice({
     name : "cart",
     initialState: {
-        items: []
+        items: [],
     },
     reducers: {
         addItem : (state,action) => {
@@ -24,4 +24,4 @@ const cartSlice = createSlice({
 
 export const {addItem, removeItem, clearItem} = cartSlice.actions;
 
-export default cartSlice.reducers;
+export default cartSlice.reducer;
